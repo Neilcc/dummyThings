@@ -28,7 +28,7 @@ public class Main {
         Random random = new Random(System.currentTimeMillis());
         StringBuilder sb = new StringBuilder();
         int count = 0;
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 132; i++) {
             count++;
             int a = genNum(random);
             String con = getConnector(random);
@@ -71,6 +71,9 @@ public class Main {
         int index1 = Math.abs(random.nextInt()) % NUM_MODS.length;
         int base1 = NUM_MODS[index1];
         int num1 = Math.abs(random.nextInt()) % base1;
+        while (num1 == 0 || num1 == 1) {
+            num1 = Math.abs(random.nextInt()) % base1;
+        }
         return num1;
     }
 
